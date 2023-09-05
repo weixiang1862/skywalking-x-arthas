@@ -1,0 +1,9 @@
+[submodule "skywalking"]
+	path = skywalking
+	url = https://github.com/weixiang1862/skywalking
+[submodule "skywalking-java"]
+	path = skywalking-java
+	url = https://github.com/weixiang1862/skywalking-java
+[submodule "skywalking-booster-ui"]
+	path = skywalking-booster-ui
+	url = https://github.com/weixiang1862/skywalking-booster-ui
