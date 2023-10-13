@@ -423,10 +423,10 @@ public class CommandQueue {
 Server
     .builder()
     .port(port, SessionProtocol.HTTP)
-    .service("/arthas", oap)
     .service("/graphql", oap)
     .service("/internal/l7check", HealthCheckService.of())
     .service("/zipkin/config.json", zipkin)
+    .serviceUnder("/arthas", oap)
     .serviceUnder("/zipkin/api", zipkin)
     .serviceUnder("/zipkin",
         FileService.of(

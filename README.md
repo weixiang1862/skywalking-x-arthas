@@ -15,13 +15,13 @@ cd ${path_to_skywalking-x-arthas}
 cp dist/arthas-control-plugin-9.1.0-SNAPSHOT.jar ${your_sw_agent_home}/plugins/
 
 cat << EOF >>${your_sw_agent_home}/config/agent.config
-> # arthas home, default is {$AGENT_HOME}/arthas
-> plugin.arthas.arthas_home=${SW_ARTHAS_HOME:}
-> # arthas tunnel server address, (e.g. ws://127.0.0.1:7777/ws)
-> plugin.arthas.tunnel_server=${SW_ARTHAS_TUNNEL_SERVER:ws://127.0.0.1:7777/ws}
-> plugin.arthas.session_timeout=${SW_ARTHAS_SESSION_TIMEOUT:}
-> plugin.arthas.disabled_commands=${SW_ARTHAS_DISABLED_COMMAND:}
-> EOF
+# arthas home, default is {$AGENT_HOME}/arthas
+plugin.arthas.arthas_home=${SW_ARTHAS_HOME:}
+# arthas tunnel server address, (e.g. ws://127.0.0.1:7777/ws)
+plugin.arthas.tunnel_server=${SW_ARTHAS_TUNNEL_SERVER:ws://127.0.0.1:7777/ws}
+plugin.arthas.session_timeout=${SW_ARTHAS_SESSION_TIMEOUT:}
+plugin.arthas.disabled_commands=${SW_ARTHAS_DISABLED_COMMAND:}
+EOF
 ```
 ### 3. copy arthas-controller to your oap-server `oap-libs` folder
 ```
@@ -29,10 +29,10 @@ cd ${path_to_skywalking-x-arthas}
 cp dist/arthas-controller-9.7.0-SNAPSHOT.jar ${your_oap_server_home}/oap-libs/
 
 cat << EOF >>${your_oap_server_home}/config/application.yml
-> arthas-controller:
->   selector: default
->   default:
-> EOF
+arthas-controller:
+  selector: default
+  default:
+EOF
 ```
 ### 4. copy skywalking-webapp.jar to your oap-server `webapp` folder
 ```
